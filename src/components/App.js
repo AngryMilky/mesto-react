@@ -85,9 +85,23 @@ function App() {
 
         <Footer />
 
-        <PopupWithForm isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} name='content_element' title='Новое место' />
-        <PopupWithForm isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} name='content_profile' title='Редактировать профиль' />
-        <PopupWithForm isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} name='edit_avatar' title='Обновить аватар' />
+        <PopupWithForm isOpen={isAddPlacePopupOpen} 
+                       onClose={closeAllPopups} 
+                       name='content_element' 
+                       title='Новое место' 
+        />
+
+        <PopupWithForm isOpen={isEditProfilePopupOpen} 
+                       onClose={closeAllPopups} 
+                       name='content_profile' 
+                       title='Редактировать профиль' 
+        />
+        
+        <PopupWithForm isOpen={isEditAvatarPopupOpen} 
+                       onClose={closeAllPopups} 
+                       name='edit_avatar' 
+                       title='Обновить аватар' 
+        />
 
         <ImagePopup
           card={selectedCard}
