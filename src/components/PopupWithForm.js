@@ -12,7 +12,7 @@ function PopupWithForm(props) {
         </button>
         <form className={`popup__form popup__form_type_${props.name}`}
           name={`${props.name}`}
-          novalidate>
+          >
           <h2 className="popup__title">{props.title}</h2>
           <button className="popup__button-save popup__button-submit" type="submit" aria-label="Сохранить">Сохранить</button>
         </form>

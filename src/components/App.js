@@ -46,7 +46,6 @@ function App() {
 
 
   const handleEditAvatarClick = () => {
-    console.log(handleEditAvatarClick);
     setIsEditAvatarPopupOpen(true);
   };
 
