@@ -18,6 +18,7 @@
 @import url('styles/blocks/element/__like-count/element__like-count.css');
 @import url('styles/blocks/element/__photo/element__photo.css');
 @import url('styles/blocks/element/__button-delete/element__button-delete.css');
+@import url('styles/blocks/element/__button-delete/_hidden/element__button-delete_hidden.css');
 @import url('styles/blocks/element/__button-like/element__button-like.css');
 @import url('styles/blocks/element/__button-like/_active/element__button-like_active.css');
 @import url('styles/blocks/element/__caption/element__caption.css');

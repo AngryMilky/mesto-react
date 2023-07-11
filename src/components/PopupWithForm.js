@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 
 function PopupWithForm(props) {
@@ -12,16 +12,17 @@ function PopupWithForm(props) {
         </button>
         <form className={`popup__form popup__form_type_${props.name}`}
           name={`${props.name}`}
+          onSubmit={props.onSubmit}
           >
           <h2 className="popup__title">{props.title}</h2>
-          <button className="popup__button-save popup__button-submit" type="submit" aria-label="Сохранить">Сохранить</button>
+          {props.children}
+          <button className="popup__button-save popup__button-submit" 
+          type="submit" 
+          aria-label="Сохранить">Сохранить</button>
         </form>
       </div>
     </div>
   )
 }
-
-
-
 
 export default PopupWithForm;

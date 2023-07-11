@@ -92,7 +92,19 @@ class Api {
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
+  changeLikeCardStatus(cardId, isLiked) {
+    if (isLiked) {
+      return this.setLike(cardId);
+    } else {
+      return this.deleteLike(cardId);
+    }
+  }
+
 }
+
+ 
+
+
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
