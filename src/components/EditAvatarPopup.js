@@ -3,14 +3,11 @@ import PopupWithForm from "./PopupWithForm";
 import {CurrentUserContext} from "../contexts/CurrentUserContext";
 
 function EditAvatarPopup(props) {
-  
   const currentUser = React.useContext(CurrentUserContext);
-  
   const avatarRef = React.useRef();
 
   function handleSubmit(e) {
     e.preventDefault();
-  
     props.onUpdateAvatar({
       avatar: avatarRef.current.value
     });
@@ -20,14 +17,12 @@ function EditAvatarPopup(props) {
     avatarRef.current.value = '';
   }, [currentUser, props.isOpen]);
 
-
-
-
   return (
 
     <PopupWithForm
     name={'edit_avatar'}
     title='Обновить аватар'
+    buttonText='Сохранить'
     isOpen={props.isOpen}
     onClose={props.onClose}
     onSubmit={handleSubmit}
@@ -44,7 +39,6 @@ function EditAvatarPopup(props) {
         id="avatar-error">
       </span>
     </PopupWithForm>
-
   )
 }
 

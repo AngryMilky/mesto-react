@@ -2,7 +2,6 @@ import React from 'react';
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function Card(props) {
-
   const currentUser = React.useContext(CurrentUserContext);
 
   // Определяем, являемся ли мы владельцем текущей карточки
@@ -25,9 +24,7 @@ function Card(props) {
     props.onCardDelete(props.card);
   };
 
-
   return (
-
     <article className="element">
       <img className="element__photo" src={props.link} alt={props.name} onClick={handleClick} />
       <button className={cardDeleteButtonClassName} onClick={handleDeleteClick} type="button" aria-label="Корзина"></button>
