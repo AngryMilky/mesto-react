@@ -14,13 +14,9 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-
   const [cards, setCards] = React.useState([]);
-
   const [selectedCard, setSelectedCard] = React.useState({});
-
   const [currentUser, setCurrentUser] = React.useState({});
-
 
   React.useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()])
@@ -32,7 +28,6 @@ function App() {
         console.log(err);
       })
   }, [])
-
 
   const handleEditAvatarClick = () => {
     setIsEditAvatarPopupOpen(true);
@@ -57,7 +52,6 @@ function App() {
     setSelectedCard(card);
   };
 
-
   function handleCardLike(card) {
     // Проверяем, есть ли уже лайк на этой карточке
     const isLiked = card.likes.some(i => i._id === currentUser._id);
@@ -71,7 +65,6 @@ function App() {
         console.log(`Ошибка ${err}`);
       })
   }
-
 
   function handleCardDelete(card) {
     api.deleteCard(card._id)
@@ -128,7 +121,6 @@ function App() {
 
       <div className="page">
         <Header />
-
         <Main onEditAvatar={handleEditAvatarClick}
           onAddPlace={handleAddPlaceClick}
           onEditProfile={handleEditProfileClick}
@@ -137,29 +129,22 @@ function App() {
           onCardDelete={handleCardDelete}
           cards={cards}
         />
-
         <Footer />
-
         <AddPlacePopup isOpen={isAddPlacePopupOpen}
           onClose={closeAllPopups}
           onAddPlace={handleAddPlaceSubmit}
         />
-
         <EditProfilePopup isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
           onUpdateUser={handleUpdateUser}
         />
-
         <EditAvatarPopup isOpen={isEditAvatarPopupOpen}
           onClose={closeAllPopups}
           onUpdateAvatar={handleUpdateAvatar}
         />
-
         <ImagePopup card={selectedCard}
           onClose={closeAllPopups}
         />
-
-
       </div>
     </CurrentUserContext.Provider>
   );
